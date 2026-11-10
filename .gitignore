@@ -1,0 +1,7 @@
+# ferramentas locais
+.impeccable/
+
+# sistema
+Thumbs.db
+desktop.ini
+.DS_Store
