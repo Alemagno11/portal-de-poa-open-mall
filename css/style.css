@@ -556,6 +556,31 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* ===================== TIMELINE ===================== */
 
+.founders{
+  display:flex;align-items:center;gap:clamp(18px,2.4vw,28px);
+  margin:0 0 clamp(40px,5vw,64px);
+  padding:clamp(20px,2.4vw,28px);
+  max-width:620px;
+  border:1px solid rgba(247,244,241,.14);
+  border-radius:var(--r-lg);
+  background:rgba(247,244,241,.035);
+}
+.founders img{
+  width:clamp(84px,9vw,110px);
+  height:auto;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:50%;
+  flex:none;
+  border:2px solid rgba(201,166,107,.5);
+}
+.founders figcaption{font-size:.95rem;color:rgba(247,244,241,.74)}
+.founders strong{
+  display:block;
+  font-size:1.05rem;font-weight:500;color:var(--cream);
+  margin-bottom:5px;
+}
+
 .timeline{
   list-style:none;
   margin:0;padding:0;
@@ -617,6 +642,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 .tl__year span{font-size:.55em;opacity:.6}
 
 .tl__card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,300px);
+  gap:clamp(20px,2.6vw,32px);
+  align-items:center;
   padding:clamp(24px,2.8vw,34px);
   border:1px solid rgba(247,244,241,.12);
   border-radius:var(--r-lg);
@@ -637,32 +666,20 @@ button,input,select,textarea{font:inherit;color:inherit}
 .tl__card p{margin:0;color:rgba(247,244,241,.76);font-size:1rem}
 .tl__card strong{font-weight:500;color:var(--cream)}
 
+/* As fotos históricas são pequenas (226–334px de largura). A coluna é limitada
+   a 300px para não ampliá-las além do que aguentam. */
 .tl__photo{
-  margin:22px 0 0;
-  aspect-ratio:16/7;
+  margin:0;
   border-radius:14px;
-  background:linear-gradient(140deg,rgba(201,166,107,.14),rgba(195,42,66,.14));
-  border:1px dashed rgba(247,244,241,.22);
-  display:grid;place-items:center;
-  position:relative;
   overflow:hidden;
+  border:1px solid rgba(247,244,241,.16);
+  background:rgba(23,16,19,.3);
 }
-.tl__photo::after{
-  content:attr(data-label);
-  font-size:.74rem;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:rgba(247,244,241,.66);
-  text-align:center;
-  padding-inline:16px;
+.tl__photo img{
+  width:100%;height:auto;display:block;
+  transition:transform .8s var(--ease);
 }
-/* foto real: <figure class="tl__photo has-img" style="background-image:url('assets/img/historia/1976.jpg')"> */
-.tl__photo.has-img{
-  background-size:cover;
-  background-position:center;
-  border-style:solid;
-}
-.tl__photo.has-img::after{content:""}
+.tl__card:hover .tl__photo img{transform:scale(1.04)}
 
 .tl--highlight .tl__card{
   background:linear-gradient(150deg,rgba(201,166,107,.16),rgba(195,42,66,.1));
@@ -1099,6 +1116,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 
 @media (max-width:900px){
+  .tl__card{grid-template-columns:1fr}
+  .tl__photo{max-width:340px}
+  .founders{flex-direction:column;align-items:flex-start;text-align:left}
+
   .split,
   .section__head--row{grid-template-columns:1fr}
   .section__head--row{align-items:start}

@@ -57,40 +57,44 @@ Tudo respeita `prefers-reduced-motion` e o site continua legível com o JS desli
 
 ## O que falta preencher (conteúdo real)
 
-1. **Fotos** — a linha do tempo e os cards de novidades estão com placeholders
-   da marca (fundo vinho + legenda). Para usar uma foto real, acrescente a
-   classe `has-img` e o `background-image` **no próprio HTML**:
+1. **Fotos da história em alta resolução** — as 6 fotos em
+   `assets/img/historia/` foram **recortadas de dentro dos slides do
+   carrossel**, então são pequenas (212 a 334px de largura) e já tinham
+   passado por compressão de rede. Na tela elas aparecem com 298px, então
+   seguram bem, mas não dá para ampliar mais nem usar em tela cheia. Vale
+   pedir os originais para a família.
+
+   Para trocar, basta substituir o arquivo pelo de mesmo nome e atualizar
+   `width`/`height` no `index.html`.
+
+2. **Fotos das novidades** — os cards ainda usam placeholders da marca (fundo
+   vinho com legenda). Para usar foto real, acrescente a classe `has-img` e o
+   `background-image` **no próprio HTML**:
 
    ```html
    <!-- antes -->
-   <figure class="tl__photo" data-label="Renato e Maria Aparecida Reis"></figure>
    <div class="news-card__media" data-label="Foto da obra"></div>
-
    <!-- depois -->
-   <figure class="tl__photo has-img" style="background-image:url('assets/img/historia/1976.jpg')"></figure>
    <div class="news-card__media has-img" style="background-image:url('assets/img/novidades/obra.jpg')"></div>
    ```
 
    > A URL precisa ficar no HTML, não no CSS: dentro do `style.css` ela seria
    > resolvida a partir da pasta `css/` e quebraria.
 
-   As fotos históricas aparecem nos slides em `referencias/` — vale pedir os
-   arquivos em alta para a família.
-
-2. **Novidades e eventos** — as 4 novidades e os 4 eventos são exemplos com a
+3. **Novidades e eventos** — as 4 novidades e os 4 eventos são exemplos com a
    estrutura final. Textos, datas e imagens precisam ser confirmados.
 
-3. **Formulário** — hoje valida e mostra mensagem de sucesso no front, mas não
+4. **Formulário** — hoje valida e mostra mensagem de sucesso no front, mas não
    envia para lugar nenhum. Em `js/main.js`, seção 9, há o ponto marcado com
    `TODO` para plugar o endpoint (Formspree, n8n, API própria ou WhatsApp).
 
-4. **Contato** — faltam telefone, e-mail e links reais de Instagram/Facebook
+5. **Contato** — faltam telefone, e-mail e links reais de Instagram/Facebook
    (os `href="#"` do rodapé).
 
-5. **Logos das marcas** — Sky Fit, Natura e HP Portal estão como texto. Com os
+6. **Logos das marcas** — Sky Fit, Natura e HP Portal estão como texto. Com os
    logos em PNG/SVG em `assets/img/marcas/`, dá para trocar.
 
-6. **Logo do Portal** — o `logo-portal-branco.png` veio do projeto antigo e tem
+7. **Logo do Portal** — o `logo-portal-branco.png` veio do projeto antigo e tem
    um fundo circular escuro embutido. Vale substituir por um SVG com fundo
    transparente.
 
