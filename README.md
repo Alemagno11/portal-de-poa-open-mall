@@ -24,7 +24,7 @@ novo site portal open mall/
 
 | Âncora         | Seção                                                            |
 |----------------|------------------------------------------------------------------|
-| `#inicio`      | Hero com o manifesto ("de posto a espaço de experiências")       |
+| `#inicio`      | Hero: manifesto à esquerda, mascotes à direita                   |
 | `#conceito`    | O que é o open mall + 3 pilares (estrutura, localização, experiência) |
 | `#historia`    | Linha do tempo 1976 → 2005 → 2009 → 2023 → 2025/26               |
 | `#marcas`      | Sky Fit, Natura, HP Portal + card "sua marca aqui"               |
@@ -54,6 +54,28 @@ história que está em `referencias/`.
 - Menu mobile em painel lateral
 
 Tudo respeita `prefers-reduced-motion` e o site continua legível com o JS desligado.
+
+## Mascotes do hero
+
+`assets/img/mascotes.webp` saiu da arte original com o fundo recortado
+(`rembg`, modelo `isnet-general-use`) e com **o logo das camisetas recolorido
+de roxo para o dourado da marca** — a arte veio em violeta, que briga com a
+paleta vinho + dourado do site.
+
+A versão com o roxo original está guardada em `mascotes-roxo-original.webp`.
+Para voltar atrás é uma linha no `index.html`:
+
+```html
+<img src="assets/img/mascotes-roxo-original.webp" ...>
+```
+
+Dois detalhes da arte original que o CSS contorna:
+
+- os mascotes são cortados na borda de baixo do quadro, então a imagem recebe
+  uma máscara (`mask-image`) que dissolve esse corte reto no fundo;
+- o logo das camisetas diz só "open mall", sem o "Portal de Poá". Se a ideia
+  for usar os mascotes de verdade na comunicação, vale pedir a arte com o
+  wordmark completo.
 
 ## O que falta preencher (conteúdo real)
 
