@@ -393,52 +393,15 @@ button,input,select,textarea{font:inherit;color:inherit}
   position:relative;z-index:2;
   width:100%;max-width:var(--wrap);
   margin-inline:auto;padding-inline:var(--gut);
-  display:grid;
-  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
-  column-gap:clamp(20px,3.4vw,52px);
-  align-items:center;
-}
-.hero__text{min-width:0}
-.hero__stats{grid-column:1 / -1}
-
-/* mascotes */
-.hero__mascotes{
-  position:relative;
-  margin:0;
-  justify-self:center;
-  width:100%;
-  max-width:600px;
-  opacity:0;
-  transform:translateY(26px) scale(.96);
-  transition:opacity 1.1s var(--ease) .3s,transform 1.1s var(--ease) .3s;
-}
-.is-ready .hero__mascotes{opacity:1;transform:none}
-.hero__mascotes::before{
-  content:"";
-  position:absolute;
-  left:50%;top:52%;
-  width:94%;aspect-ratio:1;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(201,166,107,.26),transparent 64%);
-  filter:blur(14px);
-  z-index:-1;
-}
-/* a arte original corta os mascotes na borda de baixo; a máscara dissolve esse
-   corte reto no gradiente em vez de deixar a linha dura aparecendo */
-.hero__mascotes img{
-  width:100%;height:auto;
-  filter:drop-shadow(0 22px 34px rgba(23,5,10,.5));
-  mask-image:linear-gradient(to bottom,#000 82%,transparent 99%);
-  -webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 99%);
 }
 .hero .eyebrow{color:var(--gold)}
 
 .hero__title{
   margin:0 0 clamp(22px,3vw,34px);
-  font-size:clamp(2rem,4vw,3.4rem);
+  font-size:clamp(2.6rem,7.6vw,6rem);
   font-weight:200;
-  line-height:1.05;
-  letter-spacing:-.03em;
+  line-height:1.02;
+  letter-spacing:-.035em;
   max-width:16ch;
 }
 .hero__title .line{display:block;overflow:hidden}
@@ -500,10 +463,10 @@ button,input,select,textarea{font:inherit;color:inherit}
   color:rgba(247,244,241,.55);
 }
 
-/* encostado à direita: no centro ele colidia com a régua de números */
 .hero__scroll{
   position:absolute;
-  right:var(--gut);bottom:28px;
+  left:50%;bottom:28px;
+  transform:translateX(-50%);
   z-index:3;
   display:flex;flex-direction:column;align-items:center;gap:10px;
   text-decoration:none;
@@ -1191,9 +1154,7 @@ button,input,select,textarea{font:inherit;color:inherit}
   .nav__link{font-size:1.3rem;font-weight:200;padding-block:12px;width:100%}
   .nav__cta{margin-top:22px}
 
-  .hero{min-height:auto;padding-block:120px 80px}
-  .hero__content{grid-template-columns:1fr;row-gap:28px}
-  .hero__mascotes{max-width:460px;justify-self:start}
+  .hero{min-height:auto;padding-block:132px 96px}
   .hero__stats{gap:26px}
   .hero__stats div{min-width:40%}
   .hero__scroll{display:none}
